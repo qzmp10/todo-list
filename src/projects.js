@@ -1,10 +1,10 @@
-import Todo from "./todo.js"
 
-let Project = [];
+class Project {
+    constructor(name) {
+        this.name = name;
+        this.todos = [];
+    }
+}
 
-const groceries = new Todo('shopping', "IGA", "today", "important");
 
-Project.push(groceries);
-
-
-export default Project;
+export default Project
