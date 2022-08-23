@@ -1,6 +1,6 @@
 // change button div to input div
 import { userInterface } from "./ui"
-import { makeNewTodo } from "./makeNewTodo"
+import { makeNewTodo, todoArray} from "./makeNewTodo"
 
 
 
@@ -75,7 +75,11 @@ function inputTodo(){
                 enterInput.addEventListener('click', ()=>{
                     makeNewTodo();
                     inputDiv.innerHTML = '';
-                
+                    inputDiv.classList.remove('inputDiv');
+                    inputDiv.classList.add('newTodo');
+                    inputDiv.textContent = `${todoArray[todoArray.length - 1].title}` + ': ' + `${todoArray[todoArray.length - 1].description}` + ', '
+                    + `due ${todoArray[todoArray.length - 1].date}` + `, priority: ${todoArray[todoArray.length - 1].priority}`;
+                    console.log(todoArray);
                 });
             }
         }
