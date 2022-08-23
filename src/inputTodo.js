@@ -75,6 +75,7 @@ function inputTodo(){
                 enterInput.addEventListener('click', ()=>{
                     makeNewTodo();
                     inputDiv.innerHTML = '';
+                
                 });
             }
         }

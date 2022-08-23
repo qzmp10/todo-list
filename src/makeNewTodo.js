@@ -7,8 +7,6 @@ function makeNewTodo(){
     let dateValue = document.querySelector('#date').value;
     let priorityValue = document.querySelector('#priority').value;
     let newTodo = new Todo(titleValue, descriptionValue, dateValue, priorityValue);
-
-    console.log(newTodo);
 };
 
 

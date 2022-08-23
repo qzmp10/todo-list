@@ -1,3 +1,4 @@
+import { inputTodo } from "./inputTodo";
 import { userInterface } from "./ui"
 
 const loadTab = (function(){
