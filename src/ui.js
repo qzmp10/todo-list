@@ -1,6 +1,7 @@
 import { loadTab } from "./loadTab"
 import { switchTabs } from "./switchTab";
 import { inputTodo } from "./inputTodo";
+import { inputProject } from "./inputProject"
 
 const userInterface = (function(){
     let body = document.querySelector('body');
@@ -36,7 +37,7 @@ const userInterface = (function(){
 const uiLogic = (function(){
     loadTab.loadProjectDOM();
     switchTabs();
-    inputTodo();
+    inputProject();
 })();
 
 export { userInterface }

@@ -1,4 +1,3 @@
-import { inputTodo } from "./inputTodo";
 import { userInterface } from "./ui"
 
 const loadTab = (function(){
@@ -11,6 +10,7 @@ const loadTab = (function(){
     
         let addProjectButton = document.createElement('div');;
         addProjectButton.classList.add('btn');
+        addProjectButton.classList.add('addProject');
         userInterface.mainDiv.appendChild(addProjectButton);
         addProjectButton.textContent = 'Add Project';
     };
@@ -23,6 +23,7 @@ const loadTab = (function(){
     
         let addTodoButton = document.createElement('div');
         addTodoButton.classList.add('btn');
+        addTodoButton.classList.add('addTodo');
         userInterface.mainDiv.appendChild(addTodoButton);
         addTodoButton.textContent = 'Add To-do';
     };

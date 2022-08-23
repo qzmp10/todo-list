@@ -6,7 +6,7 @@ import { makeNewTodo, todoArray} from "./makeNewTodo"
 
 function inputTodo(){
 
-    const selectButton = document.querySelector('.btn');
+    const selectButton = document.querySelector('.addTodo');
 
     function newTodoInput() {
         let inputDiv = document.createElement('div');
