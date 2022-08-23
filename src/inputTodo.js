@@ -1,11 +1,14 @@
 // change button div to input div
 import { userInterface } from "./ui"
+import { makeNewTodo } from "./makeNewTodo"
 
-(function inputTodo(){
+
+
+function inputTodo(){
 
     const selectButton = document.querySelector('.btn');
 
-    function inputTodoInfo() {
+    function newTodoInput() {
         let inputDiv = document.createElement('div');
         userInterface.mainDiv.appendChild(inputDiv);
         inputDiv.classList.add('inputDiv');
@@ -65,19 +68,22 @@ import { userInterface } from "./ui"
                 inputDiv.appendChild(priorityDiv);
 
             } else if (i==4){
-                let enterInput = document.createElement('div');
+                const enterInput = document.createElement('button');
                 inputDiv.appendChild(enterInput);
-                enterInput.textContent = 'Submit'
+                enterInput.textContent = 'Submit';
                 enterInput.classList.add('submit')
+                enterInput.addEventListener('click', ()=>{
+                    makeNewTodo();
+                    inputDiv.innerHTML = '';
+                });
             }
         }
-    }
+    };
 
     selectButton.addEventListener('click', ()=>{
-        inputTodoInfo();
-    })
-
-})();
+        newTodoInput();
+    });
+};
 
 export { inputTodo }
 
