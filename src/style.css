@@ -20,6 +20,7 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 0.8rem;
+    z-index: 10;
 }
 
 .taskBar {
@@ -61,4 +62,34 @@ body {
     font-weight: bold;
     font-size: 1.2rem;
     border-radius: 0.4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.inputDiv {
+    width: 75%;
+    height: 40%;
+    border: none;
+    background-color: rgb(236, 236, 236);
+    color: rgba(0, 0, 0, 0.603);
+    gap: 0.6rem;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 0.4rem;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.submit {
+    background-color: white;
+    padding: 0.4rem;
+    border-radius: 0.2rem;
 }

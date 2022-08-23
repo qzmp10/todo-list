@@ -1,14 +1,14 @@
 import { userInterface } from "./ui"
 
 const loadTab = (function(){
-    
+
     const loadProjectDOM = function(){
         let projectHeader = document.createElement('div');
         userInterface.mainDiv.appendChild(projectHeader);
         projectHeader.classList.add('header');
         projectHeader.textContent = 'My Projects';
     
-        let addProjectButton = document.createElement('button');;
+        let addProjectButton = document.createElement('div');;
         addProjectButton.classList.add('btn');
         userInterface.mainDiv.appendChild(addProjectButton);
         addProjectButton.textContent = 'Add Project';
@@ -20,7 +20,7 @@ const loadTab = (function(){
         todoHeader.classList.add('header');
         todoHeader.textContent = 'My To-Dos';
     
-        let addTodoButton = document.createElement('button');;
+        let addTodoButton = document.createElement('div');
         addTodoButton.classList.add('btn');
         userInterface.mainDiv.appendChild(addTodoButton);
         addTodoButton.textContent = 'Add To-do';
