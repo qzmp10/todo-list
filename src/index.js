@@ -5,6 +5,9 @@ import { userInterface } from "./ui"
 import { loadTab } from "./loadTab"
 import { switchTabs } from "./switchTab"
 import { inputTodo } from "./inputTodo"
+import { makeNewTodo, todoArray } from "./makeNewTodo"
+import { inputProject } from "./inputProject"
+
 
 
 //restart the whol;e thing dawg
