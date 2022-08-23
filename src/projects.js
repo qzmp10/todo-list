@@ -1,4 +1,3 @@
-
 class Project {
     constructor(name) {
         this.name = name;
@@ -6,5 +5,9 @@ class Project {
     }
 }
 
+let gift = 'joint';
 
-export default Project
+export { Project, gift };
+
+
+

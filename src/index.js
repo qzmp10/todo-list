@@ -1,9 +1,8 @@
-import "./style.css"
-import Todo from "./todo.js"
-import Project from "./projects"
+import { Todo } from "./todo.js"
+import { Project } from "./projects"
 
-console.log(Project);
-console.log(Todo);
+
+//restart the whol;e thing dawg
 
 
 
