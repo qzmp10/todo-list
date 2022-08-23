@@ -5,9 +5,7 @@ class Project {
     }
 }
 
-let gift = 'joint';
-
-export { Project, gift };
+export { Project };
 
 
 
