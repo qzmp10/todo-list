@@ -22,7 +22,8 @@ function inputProject() {
         nameDiv.appendChild(nameInput);
         inputDiv.appendChild(nameDiv);
 
-        let selectTodos = document.createElement('div')
+        let selectTodos = document.createElement('div');
+        selectTodos.classList.add('select-menu');
     }
 
     selectButton.addEventListener('click', ()=>{
