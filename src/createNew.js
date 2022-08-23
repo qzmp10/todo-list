@@ -1,2 +1,6 @@
 
 
+const createNewTodo = function() {
+    add();
+}
+
