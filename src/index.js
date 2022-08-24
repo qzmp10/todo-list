@@ -7,6 +7,7 @@ import { switchTabs } from "./switchTab"
 import { inputTodo } from "./inputTodo"
 import { makeNewTodo, todoArray } from "./makeNewTodo"
 import { inputProject } from "./inputProject"
+import { makeNewProject, projectArray } from "./makeNewProject"
 
 
 

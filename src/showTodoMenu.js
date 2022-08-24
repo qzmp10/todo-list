@@ -2,10 +2,10 @@ import { todoArray } from "./makeNewTodo"
 
 function showTodoMenu() {
     todoArray.forEach(todo => {
-        const selectionTodo = document.createElement('div');
-        selectionTodo.classList.add('select-todo');
-        document.querySelector('.select-menu').appendChild(selectionTodo)
-        selectionTodo.textContent = `${todo.title}`
+        const selectionTodoOption = document.createElement('div');
+        selectionTodoOption.classList.add('select-todo');
+        document.querySelector('.select-menu').appendChild(selectionTodoOption)
+        selectionTodoOption.textContent = `${todo.title}`;
         });
 }
 
