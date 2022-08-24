@@ -71,7 +71,7 @@ function inputTodo(){
                 const enterInput = document.createElement('button');
                 inputDiv.appendChild(enterInput);
                 enterInput.textContent = 'Submit';
-                enterInput.classList.add('submit')
+                enterInput.classList.add('submit');
                 enterInput.addEventListener('click', ()=>{
                     makeNewTodo();
                     inputDiv.innerHTML = '';
@@ -79,7 +79,6 @@ function inputTodo(){
                     inputDiv.classList.add('newTodo');
                     inputDiv.textContent = `${todoArray[todoArray.length - 1].title}` + ': ' + `${todoArray[todoArray.length - 1].description}` + ', '
                     + `due ${todoArray[todoArray.length - 1].date}` + `, priority: ${todoArray[todoArray.length - 1].priority}`;
-                    console.log(todoArray);
                 });
             }
         }

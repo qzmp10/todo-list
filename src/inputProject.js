@@ -1,14 +1,17 @@
 import { todoArray } from "./makeNewTodo"
 import { userInterface } from "./ui"
+import { makeNewProject, projectArray} from "./makeNewProject"
+import { showTodoMenu } from "./showTodoMenu"
+
 
 function inputProject() {
 
     const selectButton = document.querySelector('.addProject');
 
     function newProjectInput(){
-        let inputDiv = document.createElement('div');
-        userInterface.mainDiv.appendChild(inputDiv);
-        inputDiv.classList.add('inputDiv');
+        let inputDivProject = document.createElement('div');
+        userInterface.mainDiv.appendChild(inputDivProject);
+        inputDivProject.classList.add('inputDivProject');
 
         let nameDiv = document.createElement('div');
         nameDiv.classList.add('inputs')
@@ -20,11 +23,18 @@ function inputProject() {
         nameInput.setAttribute("id", "name");
         nameDiv.appendChild(nameLabel);
         nameDiv.appendChild(nameInput);
-        inputDiv.appendChild(nameDiv);
+        inputDivProject.appendChild(nameDiv);
 
         let selectTodos = document.createElement('div');
         selectTodos.classList.add('select-menu');
-    }
+        inputDivProject.appendChild(selectTodos);
+        showTodoMenu();
+
+        const enterInputProject = document.createElement('button');
+        inputDivProject.appendChild(enterInputProject);
+        enterInputProject.textContent = 'Submit';
+        enterInputProject.classList.add('submit');
+    };
 
     selectButton.addEventListener('click', ()=>{
         newProjectInput();

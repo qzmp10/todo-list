@@ -108,3 +108,46 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+.inputDivProject {
+    width: 75%;
+    height: 40%;
+    border: none;
+    background-color: rgb(236, 236, 236);
+    color: rgba(0, 0, 0, 0.603);
+    gap: 1rem;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 0.4rem;
+}
+
+.select-menu {
+    width: 80%;
+    height: 7rem;
+    background-color: white;
+    border-radius: 0.4rem;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.select-todo {
+    width: 75%;
+    height: 2rem;
+    border: none;
+    background-color: rgba(168, 209, 255, 0.5);
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: 0.5rem;
+    border-radius: 0.4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.3rem;
+}
