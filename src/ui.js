@@ -24,7 +24,21 @@ const userInterface = (function(){
     }
 
     let projectBtn = document.querySelector('.projects');
+    projectBtn.classList.add('hovered');
+    projectBtn.addEventListener('mouseover', ()=> {
+        projectBtn.classList.add('hovered');
+    });
+    projectBtn.addEventListener('mouseout', ()=>{
+        projectBtn.classList.remove('hovered')
+    })
+
     let todoBtn = document.querySelector('.to-do')
+    todoBtn.addEventListener('mouseover', ()=> {
+        todoBtn.classList.add('hovered');
+    });
+    todoBtn.addEventListener('mouseout', ()=>{
+        todoBtn.classList.remove('hovered')
+    })
 
     let mainDiv = document.createElement('div');
     mainDiv.classList.add('mainDiv')

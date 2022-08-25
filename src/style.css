@@ -107,6 +107,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 0.5rem;
 }
 
 .inputDivProject {
@@ -157,6 +158,12 @@ body {
     border-radius: 0.4rem;
 }
 
+.hovered {
+    text-shadow: 0 0 10px rgb(255, 255, 255);
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 0.4rem;
+}
+
 .newProject {
     width: 75%;
     height: 6rem;
@@ -170,4 +177,18 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 0.5rem;
+}
+
+.remove {
+    width: 20%;
+    height: 1.5rem;
+    background-color: rgb(255, 91, 91);
+    color: white;
+    border: 1px solid white;
+    border-radius: 0.2rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

@@ -79,6 +79,10 @@ function inputTodo(){
                     inputDiv.classList.add('newTodo');
                     inputDiv.textContent = `${todoArray[todoArray.length - 1].title}` + ': ' + `${todoArray[todoArray.length - 1].description}` + ', '
                     + `due ${todoArray[todoArray.length - 1].date}` + `, priority: ${todoArray[todoArray.length - 1].priority}`;
+                    let removeBtn = document.createElement('div');
+                    removeBtn.classList.add('remove');
+                    inputDiv.appendChild(removeBtn);
+                    removeBtn.textContent = 'Remove';
                 });
             }
         }

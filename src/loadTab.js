@@ -11,6 +11,12 @@ const loadTab = (function(){
         let addProjectButton = document.createElement('div');;
         addProjectButton.classList.add('btn');
         addProjectButton.classList.add('addProject');
+        addProjectButton.addEventListener('mouseover', ()=> {
+            addProjectButton.classList.add('hovered');
+        });
+        addProjectButton.addEventListener('mouseout', ()=>{
+            addProjectButton.classList.remove('hovered')
+        })
         userInterface.mainDiv.appendChild(addProjectButton);
         addProjectButton.textContent = 'Add Project';
     };
@@ -24,6 +30,12 @@ const loadTab = (function(){
         let addTodoButton = document.createElement('div');
         addTodoButton.classList.add('btn');
         addTodoButton.classList.add('addTodo');
+        addTodoButton.addEventListener('mouseover', ()=> {
+            addTodoButton.classList.add('hovered');
+        });
+        addTodoButton.addEventListener('mouseout', ()=>{
+            addTodoButton.classList.remove('hovered')
+        })
         userInterface.mainDiv.appendChild(addTodoButton);
         addTodoButton.textContent = 'Add To-do';
     };

@@ -60,7 +60,10 @@ function inputProject() {
             }
             inputDivProject.textContent = `Project name: ${projectArray[projectArray.length - 1].name}.` 
             + ' To-do: ' + `${projectTodoTitles}.`;
-            
+            let removeBtn = document.createElement('div');
+            removeBtn.classList.add('remove');
+            inputDivProject.appendChild(removeBtn);
+            removeBtn.textContent = 'Remove';
         })
 
     };
