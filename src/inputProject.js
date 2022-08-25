@@ -25,7 +25,11 @@ function inputProject() {
         nameDiv.appendChild(nameLabel);
         nameDiv.appendChild(nameInput);
         inputDivProject.appendChild(nameDiv);
-        
+
+        let selectTodosLabel = document.createElement('div');
+        inputDivProject.appendChild(selectTodosLabel);
+        selectTodosLabel.textContent = 'Select to-do';
+
         let selectTodos = document.createElement('div');
         selectTodos.classList.add('select-menu');
         inputDivProject.appendChild(selectTodos);
@@ -46,15 +50,16 @@ function inputProject() {
             makeNewProject();
             counter = -1; //reset counter from makeNewProject.js
             selectedTodosArray = []; //reset selectedTodosArray from makeNewProject.js
-            console.log(todoArray);
-            console.log(projectArray);
+
             inputDivProject.innerHTML = '';
             inputDivProject.classList.remove('inputDiv');
             inputDivProject.classList.add('newProject');
-
-
+            let projectTodoTitles = '';
+            for(const todo of projectArray[projectArray.length - 1].todos){
+                projectTodoTitles += (todo.title + ', ');
+            }
             inputDivProject.textContent = `Project name: ${projectArray[projectArray.length - 1].name}.` 
-            + ' To-do: ' + `//HERE I DONT KNOW HOW TO GET ALL THE TODOS FROM THE PROJECT TO SHOW IN TEXT`;
+            + ' To-do: ' + `${projectTodoTitles}.`;
             
         })
 
