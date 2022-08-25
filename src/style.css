@@ -96,7 +96,7 @@ body {
 
 .newTodo {
     width: 75%;
-    height: 4rem;
+    height: 6rem;
     border: none;
     background-color: rgb(236, 236, 236);
     color: rgba(0, 0, 0, 0.603);
@@ -155,4 +155,19 @@ body {
 .selected{
     border: 2px solid rgb(0, 255, 255);
     border-radius: 0.4rem;
+}
+
+.newProject {
+    width: 75%;
+    height: 6rem;
+    border: none;
+    background-color: rgb(236, 236, 236);
+    color: rgba(0, 0, 0, 0.603);
+    font-weight: bold;
+    font-size: 0.7rem;
+    border-radius: 0.4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }

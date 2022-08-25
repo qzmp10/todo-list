@@ -48,10 +48,17 @@ function inputProject() {
             selectedTodosArray = []; //reset selectedTodosArray from makeNewProject.js
             console.log(todoArray);
             console.log(projectArray);
-            console.log(newProject);
-        })
-    };
+            inputDivProject.innerHTML = '';
+            inputDivProject.classList.remove('inputDiv');
+            inputDivProject.classList.add('newProject');
 
+
+            inputDivProject.textContent = `Project name: ${projectArray[projectArray.length - 1].name}.` 
+            + ' To-do: ' + `//HERE I DONT KNOW HOW TO GET ALL THE TODOS FROM THE PROJECT TO SHOW IN TEXT`;
+            
+        })
+
+    };
     selectButton.addEventListener('click', ()=>{
         newProjectInput();
     });
