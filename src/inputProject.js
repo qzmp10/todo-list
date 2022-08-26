@@ -4,7 +4,6 @@ import { userInterface } from "./ui"
 import { makeNewProject, projectArray, selectedTodosArray, counter } from "./makeNewProject"
 import { showTodoMenu } from "./showTodoMenu"
 
-
 function inputProject() {
 
     const selectButton = document.querySelector('.addProject');
@@ -47,23 +46,53 @@ function inputProject() {
         enterInputProject.textContent = 'Submit';
         enterInputProject.classList.add('submit');
         enterInputProject.addEventListener('click', () => {
-            makeNewProject();
+            makeNewProject(); // explanation in makeNewProject.js
+
             counter = -1; //reset counter from makeNewProject.js
             selectedTodosArray = []; //reset selectedTodosArray from makeNewProject.js
+            
+            inputDivProject.innerHTML = ''; //clear the form
+            inputDivProject.classList.remove('inputDiv'); //remove class to change design
+            inputDivProject.classList.add('newProject'); // add class to change design
+            let projectTodoTitles = ''; //set a variable for the textContent of the todo titles inside the project Array
 
-            inputDivProject.innerHTML = '';
-            inputDivProject.classList.remove('inputDiv');
-            inputDivProject.classList.add('newProject');
-            let projectTodoTitles = '';
-            for(const todo of projectArray[projectArray.length - 1].todos){
+            for(const todo of projectArray[projectArray.length - 1].todos){ // for every todo in the recently created project array, add the titles to the string variable
                 projectTodoTitles += (todo.title + ', ');
             }
-            inputDivProject.textContent = `Project name: ${projectArray[projectArray.length - 1].name}.` 
-            + ' To-do: ' + `${projectTodoTitles}.`;
-            let removeBtn = document.createElement('div');
-            removeBtn.classList.add('remove');
+
+            inputDivProject.textContent = `Project name: ${projectArray[projectArray.length - 1].name}.` //show project name and the todos in the new project div
+            + ' To-do: ' + `${projectTodoTitles}.`; 
+
+            let newProjects = document.querySelectorAll('.newProject'); // select all new projects
+
+            newProjects.forEach(newProject => { //for each created Project Div, assign a data-id that is equal to the counter number 
+                counter += 1;                   //(first div data-id === 0, next one === 1, etc...)                                                               
+                newProject.dataset.id = counter;
+            })
+
+            let removeBtn = document.createElement('div'); //create button to remove the project
+            removeBtn.classList.add('remove'); 
             inputDivProject.appendChild(removeBtn);
             removeBtn.textContent = 'Remove';
+            
+            removeBtn.addEventListener('click', ()=> {
+                counter = -1; // reset counter when click on remove, because it will be used again to reset data-id
+                let id = removeBtn.parentElement.dataset.id; //create an id variable that stores the previous data-id of deleted project
+
+                let projectIndex = projectArray.indexOf(projectArray[id]); // since id variable will be the same as index in projectArray, 
+                projectArray.splice(projectIndex, 1);                      // use the id of the div to get corresponding index of object in projectArray
+                //then slice the corresponding object from the array
+
+                removeBtn.parentElement.classList.remove('newProject'); //remove the class to reset data-id (next few lines)
+
+                let remainingProjects = document.querySelectorAll('.newProject'); // select remaining project divs
+                remainingProjects.forEach(remainingProject => { //each remaining project gets new data-id to correspond to index of objects in projectArray
+                    counter += 1; 
+                    remainingProject.dataset.id = counter;
+                })
+                removeBtn.parentElement.remove(); // remove project div from DOM
+            })
+            
         })
 
     };

@@ -21,6 +21,7 @@ function makeNewProject(){
     })
 
     let newProject = new Project(nameValue, selectedTodosArray); //create new Project w/ name and todos. **selectedTodosArray** === todos in project
+    
     projectArray.push(newProject); //push new Project in projectArray to save in localStorage later
     
 };

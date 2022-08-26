@@ -1,1 +1,0 @@
-import { projectArray } from './makeNewProject'
