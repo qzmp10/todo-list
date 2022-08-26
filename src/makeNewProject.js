@@ -6,6 +6,7 @@ let projectArray = [];
 let selectedTodosArray = [];
 
 function makeNewProject(){
+    counter = -1;
     let nameValue = document.querySelector('#name').value; // get project name
 
     let selectionTodoOptions = document.querySelectorAll('.select-todo') //give ID to all selectable todos
@@ -21,9 +22,7 @@ function makeNewProject(){
     })
 
     let newProject = new Project(nameValue, selectedTodosArray); //create new Project w/ name and todos. **selectedTodosArray** === todos in project
-    
     projectArray.push(newProject); //push new Project in projectArray to save in localStorage later
-    
 };
 
 export { makeNewProject, projectArray, counter, selectedTodosArray }

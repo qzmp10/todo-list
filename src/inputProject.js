@@ -7,6 +7,7 @@ import { showTodoMenu } from "./showTodoMenu"
 function inputProject() {
 
     const selectButton = document.querySelector('.addProject');
+    
 
     function newProjectInput(){
         let inputDivProject = document.createElement('div');
@@ -52,7 +53,7 @@ function inputProject() {
             selectedTodosArray = []; //reset selectedTodosArray from makeNewProject.js
             
             inputDivProject.innerHTML = ''; //clear the form
-            inputDivProject.classList.remove('inputDiv'); //remove class to change design
+            inputDivProject.classList.remove('inputDivProject'); //remove class to change design
             inputDivProject.classList.add('newProject'); // add class to change design
             let projectTodoTitles = ''; //set a variable for the textContent of the todo titles inside the project Array
 
@@ -74,7 +75,7 @@ function inputProject() {
             removeBtn.classList.add('remove'); 
             inputDivProject.appendChild(removeBtn);
             removeBtn.textContent = 'Remove';
-            
+
             removeBtn.addEventListener('click', ()=> {
                 counter = -1; // reset counter when click on remove, because it will be used again to reset data-id
                 let id = removeBtn.parentElement.dataset.id; //create an id variable that stores the previous data-id of deleted project
@@ -99,6 +100,7 @@ function inputProject() {
     selectButton.addEventListener('click', ()=>{
         newProjectInput();
     });
+   
 }
 
 export { inputProject }

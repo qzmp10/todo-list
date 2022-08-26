@@ -79,10 +79,37 @@ function inputTodo(){
                     inputDiv.classList.add('newTodo');
                     inputDiv.textContent = `${todoArray[todoArray.length - 1].title}` + ': ' + `${todoArray[todoArray.length - 1].description}` + ', '
                     + `due ${todoArray[todoArray.length - 1].date}` + `, priority: ${todoArray[todoArray.length - 1].priority}`;
+
+                    let counter = -1; //set counter value;
+
+                    let newTodos = document.querySelectorAll('.newTodo'); // select all new todos;
+                    newTodos.forEach(newTodo => { //for each created todo Div, assign a data-value that is equal to the counter number 
+                        counter += 1;                   //(first div data-value === 0, next one === 1, etc...)                                                               
+                        newTodo.dataset.value = counter;
+                    })
+
                     let removeBtn = document.createElement('div');
                     removeBtn.classList.add('remove');
                     inputDiv.appendChild(removeBtn);
                     removeBtn.textContent = 'Remove';
+
+                    removeBtn.addEventListener('click', ()=> {
+                        counter = -1; // reset counter when click on remove, because it will be used again to reset data-value
+                        let value = removeBtn.parentElement.dataset.value; //create a value variable that stores the previous data-value of deleted todo
+        
+                        let todoIndex = todoArray.indexOf(todoArray[value]); // since id variable will be the same as index in projectArray, 
+                        todoArray.splice(todoIndex, 1);                      // use the id of the div to get corresponding index of object in todoArray
+                        //then slice the corresponding object from the array
+        
+                        removeBtn.parentElement.classList.remove('newTodo'); //remove the class to reset data-value (next few lines)
+        
+                        let remainingTodos = document.querySelectorAll('.newTodo'); // select remaining project divs
+                        remainingTodos.forEach(remainingTodo => { //each remaining todo gets new data-value to correspond to index of objects in todoArray
+                            counter += 1; 
+                            remainingTodo.dataset.value = counter;
+                        })
+                        removeBtn.parentElement.remove(); // remove project div from DOM
+                    })
                 });
             }
         }
