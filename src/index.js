@@ -8,6 +8,14 @@ import { inputTodo } from "./inputTodo"
 import { makeNewTodo, todoArray } from "./makeNewTodo"
 import { inputProject } from "./inputProject"
 import { makeNewProject, projectArray } from "./makeNewProject"
+import { loadFromProjectArray } from "./loadFromProjectArray"
+import { loadFromTodoArray } from "./loadFromTodoArray"
+import { checkProjectArrayLocalStorage } from "./localStorage"
+import { checkTodoArrayLocalStorage } from "./localStorage"
+import { todoArrayLocalStorage } from "./localStorage"
+import { projectArrayLocalStorage } from "./localStorage"
+import { setTodoArrayValues } from "./localStorage"
+import { setProjectArrayValues } from "./localStorage"
 
 
 
