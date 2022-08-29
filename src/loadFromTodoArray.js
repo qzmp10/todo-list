@@ -1,5 +1,6 @@
 import { todoArray } from "./makeNewTodo"
 import { userInterface } from "./ui";
+import { todoArrayLocalStorage } from "./localStorage";
 
 export function loadFromTodoArray(){ //load todos in todoArray, with buttons, data-values, etc..
 
@@ -41,7 +42,10 @@ export function loadFromTodoArray(){ //load todos in todoArray, with buttons, da
             remainingTodo.dataset.value = counter;
         })
         removeBtn.parentElement.remove();
-        console.log(todoArray);
+
+        todoArrayLocalStorage(todoArray); //send updated todoArray to localStorage 
+        
+        
     });
     };
 };

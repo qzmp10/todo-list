@@ -1,8 +1,7 @@
 // change button div to input div
 import { userInterface } from "./ui"
 import { makeNewTodo, todoArray} from "./makeNewTodo"
-
-
+import { todoArrayLocalStorage } from "./localStorage";
 
 function inputTodo(){
 
@@ -74,6 +73,8 @@ function inputTodo(){
                 enterInput.classList.add('submit');
                 enterInput.addEventListener('click', ()=>{
                     makeNewTodo();
+                    todoArrayLocalStorage(todoArray); //send updated todoArray to localStorage 
+
                     inputDiv.innerHTML = '';
                     inputDiv.classList.remove('inputDiv');
                     inputDiv.classList.add('newTodo');
@@ -109,6 +110,8 @@ function inputTodo(){
                             remainingTodo.dataset.value = counter;
                         })
                         removeBtn.parentElement.remove(); // remove project div from DOM
+
+                        todoArrayLocalStorage(todoArray); //send updated todoArray to localStorage 
                     })
                 });
             }

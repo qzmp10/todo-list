@@ -1,8 +1,7 @@
-import { Project } from "./projects"
-import { todoArray } from "./makeNewTodo"
 import { userInterface } from "./ui"
 import { makeNewProject, projectArray, selectedTodosArray, counter } from "./makeNewProject"
 import { showTodoMenu } from "./showTodoMenu"
+import { projectArrayLocalStorage } from "./localStorage";
 
 function inputProject() {
 
@@ -48,6 +47,7 @@ function inputProject() {
         enterInputProject.classList.add('submit');
         enterInputProject.addEventListener('click', () => {
             makeNewProject(); // explanation in makeNewProject.js
+            projectArrayLocalStorage(projectArray); //send updated projectArray to localStorage
 
             counter = -1; //reset counter from makeNewProject.js
             selectedTodosArray = []; //reset selectedTodosArray from makeNewProject.js
@@ -59,7 +59,7 @@ function inputProject() {
 
             for(const todo of projectArray[projectArray.length - 1].todos){ // for every todo in the recently created project array, add the titles to the string variable
                 projectTodoTitles += (todo.title + ', ');
-            }
+            };
 
             inputDivProject.textContent = `Project name: ${projectArray[projectArray.length - 1].name}.` //show project name and the todos in the new project div
             + ' To-do: ' + `${projectTodoTitles}.`; 
@@ -69,7 +69,7 @@ function inputProject() {
             newProjects.forEach(newProject => { //for each created Project Div, assign a data-id that is equal to the counter number 
                 counter += 1;                   //(first div data-id === 0, next one === 1, etc...)                                                               
                 newProject.dataset.id = counter;
-            })
+            });
 
             let removeBtn = document.createElement('div'); //create button to remove the project
             removeBtn.classList.add('remove'); 
@@ -90,11 +90,14 @@ function inputProject() {
                 remainingProjects.forEach(remainingProject => { //each remaining project gets new data-id to correspond to index of objects in projectArray
                     counter += 1; 
                     remainingProject.dataset.id = counter;
-                })
+                });
                 removeBtn.parentElement.remove(); // remove project div from DOM
-            })
+
+                projectArrayLocalStorage(projectArray); //send updated projectArray to localStorage
+                
+            });
             
-        })
+        });
 
     };
     selectButton.addEventListener('click', ()=>{

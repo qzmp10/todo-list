@@ -2,8 +2,11 @@ import { userInterface } from "./ui";
 import { loadTab } from "./loadTab";
 import { inputTodo } from "./inputTodo";
 import { inputProject } from "./inputProject"
-import { loadFromTodoArray } from "./loadFromArray"
+import { loadFromTodoArray } from "./loadFromTodoArray"
 import { loadFromProjectArray } from "./loadFromProjectArray"
+import { todoArray } from "./makeNewTodo";
+import { projectArray } from "./makeNewProject";
+import { todoArrayLocalStorage, projectArrayLocalStorage} from "./localStorage"
 
 
 const switchTabs = function(){
@@ -14,6 +17,7 @@ const switchTabs = function(){
         loadTab.loadTodoDOM();
         inputTodo();
         loadFromTodoArray();
+        projectArrayLocalStorage(projectArray);
     });
     
     userInterface.projectBtn.addEventListener('click', ()=>{
@@ -21,6 +25,7 @@ const switchTabs = function(){
         loadTab.loadProjectDOM();
         inputProject(); 
         loadFromProjectArray();
+        todoArrayLocalStorage(todoArray);
 });
 };
 export { switchTabs }

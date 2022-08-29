@@ -1,7 +1,9 @@
 import { loadTab } from "./loadTab"
 import { switchTabs } from "./switchTab";
-import { inputTodo } from "./inputTodo";
 import { inputProject } from "./inputProject"
+import { checkTodoArrayLocalStorage, checkProjectArrayLocalStorage, setTodoArrayValues, setProjectArrayValues } from "./localStorage";
+import { loadFromProjectArray } from "./loadFromProjectArray";
+
 
 const userInterface = (function(){
     let body = document.querySelector('body');
@@ -49,9 +51,29 @@ const userInterface = (function(){
 })();
 
 const uiLogic = (function(){
+    checkProjectArrayLocalStorage(); // check if localStorage is empty, if empty return 0, else 1
+
+    if(checkProjectArrayLocalStorage() === 1){
+        setProjectArrayValues(); //array values in localStorage = projectArray
+    } else {
+        return;
+    }
+
+    checkTodoArrayLocalStorage(); // check if localStorage is empty, if empty return 0, else 1
+    
+    if(checkTodoArrayLocalStorage() === 1){
+        setTodoArrayValues(); //array values in localStorage = todoArray
+    } else {
+        return;
+    }
+
+
     loadTab.loadProjectDOM();
     switchTabs();
     inputProject();
+    loadFromProjectArray();
 })();
+
+
 
 export { userInterface }

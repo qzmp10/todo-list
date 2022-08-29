@@ -1,5 +1,6 @@
 import { projectArray } from "./makeNewProject"
 import { userInterface } from "./ui";
+import { projectArrayLocalStorage } from "./localStorage";
 
 export function loadFromProjectArray(){
 
@@ -12,7 +13,6 @@ export function loadFromProjectArray(){
 
         for(const todo of project.todos){
             projectTodoTitles += (todo.title + ', ');
-            console.log(todo.title);
         };
 
         inputDivProject.textContent = `Project name: ${project.name}.` 
@@ -46,7 +46,8 @@ export function loadFromProjectArray(){
                     remainingProject.dataset.id = counter;
                 });
                 removeBtn.parentElement.remove(); 
-                console.log(projectArray);
+                projectArrayLocalStorage(projectArray); //send updated todoArray to localStorage 
+                
             });
 
     };
